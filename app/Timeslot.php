@@ -1,4 +1,5 @@
 <?php
+use  Assert\Assert;
 
 /**
  * Class Timeslot
@@ -37,13 +38,8 @@ abstract class Timeslot
      */
     public function __construct(Artist $artist, string $description, DateTime $startsAt, DateTime $endsAt)
     {
-        if (empty($description)) {
-            throw new InvalidArgumentException(self::INVALID_DESCRIPTION);
-        }
-
-        if ($startsAt > $endsAt) {
-            throw new InvalidArgumentException(self::INVALID_TIME_INTERVAL);
-        }
+        Assert::that($description)->notEmpty(self::INVALID_DESCRIPTION);
+        Assert::that($endsAt)->greaterThan($startsAt, self::INVALID_TIME_INTERVAL);
 
         $this->artist = $artist;
         $this->description = $description;

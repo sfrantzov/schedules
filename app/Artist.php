@@ -1,5 +1,5 @@
 <?php
-
+use  Assert\Assert;
 /**
  * Class Artist
  */
@@ -17,9 +17,7 @@ class Artist {
      */
     public function __construct(string $name)
     {
-        if (empty($name)) {
-            throw new InvalidArgumentException(self::INVALID_NAME);
-        }
+        Assert::that($name)->notEmpty(self::INVALID_NAME);
         $this->name = $name;
     }
 
