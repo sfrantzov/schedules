@@ -1,9 +1,16 @@
 <?php
+use App\Traits\MagicTrait;
 
 /**
  * Class ScheduleView
+ * Params (alphabetically):
+ *
+ * @property-read int $numberOfTimeslots
+ * @property-read int $durationInMinutes
  */
 class ScheduleView {
+    use MagicTrait;
+
     /**
      * @var Schedule
      */

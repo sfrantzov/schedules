@@ -8,10 +8,10 @@ namespace Tests\Basic;
 class ArtistViewTest extends \PHPUnit_Framework_TestCase
 {
     /**
+     * @dataProvider getArtistData
      * @param string $name
      * @param string $nameInitials
      * @param string $nameLowerCase
-     * @dataProvider getArtistData
      */
     public function testInitialsAndLowercase(string $name, string $nameInitials, string $nameLowerCase)
     {
@@ -19,6 +19,8 @@ class ArtistViewTest extends \PHPUnit_Framework_TestCase
         $view = new \ArtistView($artist);
 
         $this->assertEquals($name, $artist->getName());
+        $this->assertEquals($name, $artist->name);
+        $this->assertEquals($name, $view->getName());
         $this->assertEquals($nameInitials, $view->getInitials());
         $this->assertEquals($nameLowerCase, $view->getLowerCase());
     }

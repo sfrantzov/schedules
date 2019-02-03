@@ -1,6 +1,16 @@
 <?php
+use App\Traits\MagicTrait;
 
+/**
+ * Class TimeslotView
+ * Params (alphabetically):
+ *
+ * @property-read int $durationInMinutes
+ * @property-read int $descriptionExcerpt
+ */
 class TimeslotView {
+    use MagicTrait;
+
     /**
      * @var Timeslot
      */

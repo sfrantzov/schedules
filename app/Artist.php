@@ -1,9 +1,14 @@
 <?php
-use  Assert\Assert;
+use Assert\Assert;
+use App\Traits\MagicTrait;
 /**
  * Class Artist
- */
+ * Params (alphabetically):
+ *
+ * @property string $name
+*/
 class Artist {
+    use MagicTrait;
     /**
      * @var string
      */

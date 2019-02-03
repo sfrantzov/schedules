@@ -1,11 +1,19 @@
 <?php
-use  Assert\Assert;
+use Assert\Assert;
+use App\Traits\MagicTrait;
 
 /**
  * Class Timeslot
+ * Params (alphabetically):
+ *
+ * @property Artist $artist
+ * @property string $description
+ * @property DateTime $startsAt
+ * @property DateTime $endsAt
  */
 abstract class Timeslot
 {
+    use MagicTrait;
     /**
      * @var Artist
      */
