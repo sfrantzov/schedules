@@ -1,0 +1,19 @@
+{
+  "name": "stoyan/project",
+  "authors": [
+    {
+      "name": "Stoyan Frantsov",
+      "email": "stoyan@emind.bg"
+    }
+  ],
+  "require": {
+
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^4.2",
+    "phpunit/phpunit": "^5"
+  },
+  "autoload": {
+    "classmap": ["app/"]
+  }
+}
