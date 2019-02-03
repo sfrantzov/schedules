@@ -31,6 +31,6 @@ class TimeslotView {
      */
     public function getDescriptionExcerpt(int $length = 10)
     {
-        return substr($this->timeslot->getDescription(), 0, $length);
+        return mb_substr($this->timeslot->getDescription(), 0, $length);
     }
 }

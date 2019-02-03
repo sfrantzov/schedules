@@ -22,7 +22,7 @@ class ArtistView {
      */
     public function getInitials()
     {
-        return substr($this->artist->getName(), 0, 1);
+        return mb_substr($this->artist->getName(), 0, 1);
     }
 
     /**
@@ -30,6 +30,6 @@ class ArtistView {
      */
     public function getLowerCase()
     {
-        return strtolower($this->artist->getName());
+        return mb_strtolower($this->artist->getName());
     }
 }
